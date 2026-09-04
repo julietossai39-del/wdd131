@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #005F73;
+    /* Deep Teal: Headers, footers, main branding */
+    --secondary-color: #E0F2F1;
+    /* Soft Sage: Component background/borders */
+    --accent-color: #EE9B00;
+    /* Sunshine Yellow: Hover states, buttons, links */
+    --text-color: #0F2A30;
+    /* Dark Charcoal-Teal: High readability body text */
+    --bg-color: #F7FCFC;
+    /* Clean Ice-White: Overall page body background */
+    --card-bg-color: #FFFFFF;
+    /* Pure White: Keeps content sections clean and readable */
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: var(--bg-color);
+}
+
+header span {
+    display: block;
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    padding: 1rem;
+    text-align: center;
+}
+
+nav {
+    background-color: var(--secondary-color);
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+nav a {
+    display: block;
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 1rem;
+    text-align: center;
+}
+
+nav li {
+    list-style: none;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+nav a:hover {
+    color: var(--accent-color);
+}
+
+.break {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.card {
+    background-color: var(--card-bg-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.card h2 {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    text-align: center;
+    padding: 0.75rem;
+    font-size: 1.2rem;
+}
+
+.card img {
+    float: right;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin: 0.5rem;
+}
+
+.card p, .card article {
+    padding: 1.2rem;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.flag-container {
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 90px;
+}
+
+.flag-container figcaption {
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--text-color);
+    margin-top: 5px;
+    text-align: center;
+}
+
+article h3 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+article img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+}
+
+.card ul {
+    list-style-type: disc;
+    padding-left: 2rem;
+    padding-top: 10rem;
+    padding-bottom: 1rem;
+}
+
+.card li {
+    margin-bottom: 0.75rem;
+}
+
+.card li a {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.card li a:hover {
+    color: var(--accent-color);
+}
+
+
+
+footer {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
