@@ -24,6 +24,10 @@ body {
     background-color: var(--bg-color);
 }
 
+header{
+    display: block;
+}
+
 header span {
     display: block;
     background-color: var(--primary-color);
