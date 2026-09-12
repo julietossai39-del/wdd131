@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temple Albums</title>
+    <meta name="description" content="WDD 131 - Temple Album project featuring responsive design with CSS Grid and Flexbox.">
+    
+    <!-- Optimized Google Fonts (Example using Roboto, change to your preferred font) -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Preload your primary stylesheet to eliminate render-blocking delay -->
+    <link rel="preload" href="styles/temple.css" as style>
+    <link rel="stylesheet" href="styles/temple.css">
+    <link rel="stylesheet" href="styles/temple-large.css">
+    
+    <script src="scripts/temple.js" defer></script>
+</head>
+
+
+<body>
+    <header>
+        <h1>Temple Albums</h1>
+        <button type="button" id="menu"></button>
+        <nav>
+            <ul class="navigation">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Old</a></li>
+                <li><a href="#">New</a></li>
+                <li><a href="#">Large</a></li>
+                <li><a href="#">Small</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Home</h2>
+        <div class="grid-container">
+            <figure>
+                <img src="images/aba-nigeria-temple.jpeg" alt="Aba Nigeria Temple" width="427" height="284" fetchpriority="high">
+                <figcaption>
+                    Aba Nigeria Temple
+                </figcaption>
+            </figure>
+            <figure>
+                <img src="images/aba-nigeria-temple.jpeg" alt="Aba Nigeria Temple" width="427" height="284" fetchpriority="high">
+                <figcaption>
+                    Aba Nigeria Temple
+                </figcaption>
+            </figure>
+            <figure>
+                <img src="images/aba-nigeria-temple.jpeg" alt="Aba Nigeria Temple" width="427" height="284" fetchpriority="high">
+                <figcaption>
+                    Aba Nigeria Temple
+                </figcaption>
+            </figure>
+            <figure>
+                <img src="images/salt-lake-temple.jpg" alt="Salt Lake Temple" width="400" height="250" fetchpriority="high">
+                <figcaption>
+                    Salt Lake Temple
+                </figcaption>
+            </figure>
+            <figure>
+                <img src="images/salt-lake-temple.jpg" alt="Salt Lake Temple" width="400" height="250">
+                <figcaption>
+                    Salt Lake Temple
+                </figcaption>
+            </figure>
+            <figure>
+                <img src="images/salt-lake-temple.jpg" alt="Salt Lake Temple" width="400" height="250" loading="lazy">
+                <figcaption>
+                    Salt Lake Temple
+                </figcaption>
+            </figure>
+            <figure>
+                <img src="images/temple-small.jpg" alt="Accra Ghana Temple" width="400" height="250" loading="lazy">
+                <figcaption>
+                    Accra Ghana Temple
+                </figcaption>
+            </figure>
+            <figure>
+                <img src="images/temple-small.jpg" alt="Accra Ghana Temple" width="400" height="250" loading="lazy">
+                <figcaption>
+                    Accra Ghana Temple
+                </figcaption>
+            </figure>
+            <figure>
+                <img src="images/temple-small.jpg" alt="Accra Ghana Temple" width="400" height="250" loading="lazy">
+                <figcaption>
+                    Accra Ghana Temple
+                </figcaption>
+            </figure>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; <span id="currentyear"></span> 🌹 Destiny Ossai 🌹 Nigeria</p>
+        <p>Last modified: <span id="lastModified"></span></p>
+    </footer>
+</body>
+
+</html>

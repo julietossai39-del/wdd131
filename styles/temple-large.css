@@ -1,0 +1,37 @@
+@media (min-width: 740px) {
+    #menu {
+        display: none; /* Removes the mobile toggle button on desktop views */
+    }
+
+    header {
+        display: flex; /* Arranges header layout elements side-by-side */
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    nav ul.navigation {
+        flex-direction: row; /* Lines desktop tabs horizontally */
+        gap: 1.5rem;
+    }
+
+    nav ul.navigation li {
+        display: block; /* FORCES links to stay visible without JS toggle interference */
+    }
+
+    nav a {
+        padding: 0.5rem 1rem; 
+    }
+
+    main {
+        max-width: 1200px; /* Gives your portfolio broader container room on widescreen displays */
+    }
+
+    .grid-container {
+        max-width: 100%;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive card multi-column sizing */
+    }
+}

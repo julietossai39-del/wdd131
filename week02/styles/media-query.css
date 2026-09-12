@@ -1,0 +1,51 @@
+/* Style the document as shown in the example screenshots below.
+media-query.css
+Do not include a media query.
+Use the Google Font – Roboto in the body rule.
+The header, main, and footer
+Each have a maximum width of 640 pixels
+are centered on the page using margin: 1rem auto
+include a faint border
+use appropriate padding
+have a blueish background color of your choice */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+header, main, footer {
+    max-width: 640px;
+    margin: 1rem auto;
+    border: 1px solid #ccc; 
+    padding: 1rem;
+    background-color: #e0f7fa;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+}
+
+
+section {
+  padding: 1rem;
+  background-color: #fff;
+}
+
+@media screen and (min-width: 500px){
+    header{
+            background-color: black;
+            color: #ccc;
+    }
+
+    main {
+        grid-template-columns: 1fr 1fr;
+    }
+}
