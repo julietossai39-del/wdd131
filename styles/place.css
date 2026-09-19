@@ -1,4 +1,12 @@
-:root {}
+:root {
+    --primary-font: 'Roboto', sans-serif;
+    --primary: #7e65cc;
+    --accent: #A397C7;
+    --text-dark: #333333;
+    --text-light: #FFFFFF;
+    --card-bg-desktop: rgba(255, 255, 255, 0.85);
+    --border-color: #ddd;
+}
 
 * {
     margin: 0;
@@ -7,7 +15,7 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--primary-font);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -19,13 +27,13 @@ header {
 }
 
 .banner {
-    background-color: #7e65cc;
-    color: white;
+    background-color: var(--primary);
+    color: var(--text-light);
     padding: 20px;
 }
 
 .stripe {
-    background-color: #A397C7;
+    background-color: var(--accent);
     height: 12px;
     width: 100%;
 }
@@ -36,7 +44,13 @@ header {
     flex-direction: column;
 }
 
+/* Base styles for the hero container on mobile */
 .hero-section {
+    width: 100%;
+}
+
+.hero-section picture {
+    display: block;
     width: 100%;
 }
 
@@ -48,7 +62,7 @@ header {
 
 .card {
     padding: 25px;
-    background-color: #FFFFFF;
+    background-color: var(--text-light);
     text-align: center;
 }
 
@@ -66,8 +80,16 @@ header {
     justify-content: space-between;
     align-items: center;
     font-size: 0.95rem;
-    border-bottom: 1px dashed rgba(0, 0, 0, 0.05);
     padding-bottom: 5px;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.05);
+}
+
+.data-row:last-of-type {
+    border-bottom: none;
+}
+
+.data-row:hover {
+    background-color: rgba(126, 101, 204, 0.05);
 }
 
 .label {
@@ -75,10 +97,15 @@ header {
     text-align: left;
 }
 
+::selection {
+    background-color: var(--accent);
+    color: var(--text-light);
+}
+
 .value {
     font-weight: 400;
     text-align: right;
-    color: #333333;
+    color: var(--text-dark);
 }
 
 .weather-icon-box {
@@ -94,10 +121,14 @@ header {
 }
 
 footer {
-    background-color:  #7e65cc;
-    color: #FFFFFF;
+    background-color: var(--primary);
+    color: var(--text-light);
     padding: 20px;
     text-align: center;
+}
+
+footer p:first-of-type::before {
+    content: "📍 ";
 }
 
 @media (min-width: 768px) {
@@ -106,16 +137,40 @@ footer {
         width: 100%;
         max-width: 1200px;
         margin: 0 auto;
+        min-height: 550px; 
     }
 
+    /* ADJUSTMENT 1: Make the hero section fill the container background layer */
+    .hero-section {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+    .hero-section picture {
+        height: 100%;
+    }
+
+    /* ADJUSTMENT 2: Force the image to cover the container area cleanly without distorting */
+    .hero-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* ADJUSTMENT 3: Elevate cards with z-index to sit on top of the hero image background */
     .card {
         position: absolute;
-        background-color: rgba(255, 255, 255, 0.85);
-        border: 1px solid #ddd;
+        background-color: var(--card-bg-desktop);
+        border: 1px solid var(--border-color);
         border-radius: 4px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         text-align: left;
         width: 320px;
+        z-index: 2;
     }
 
     .data-card {
@@ -130,10 +185,10 @@ footer {
 
     .data-card h2 {
         display: block;
-        background-color: #7e65cc;
-        color: #FFFFFF;
+        background-color: var(--primary);
+        color: var(--text-light);
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        border: 1px solid #ddd;
+        border: 1px solid var(--border-color);
         border-radius: 4px;
         padding: 10px;
         margin-bottom: 20px;
@@ -144,15 +199,15 @@ footer {
     .weather-card h2 {
         display: block;
         position: relative;
-        background-color: #7e65cc;
-        color: #FFFFFF;
+        background-color: var(--primary);
+        color: var(--text-light);
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        border: 1px solid #ddd;
+        border: 1px solid var(--border-color);
         border-radius: 4px;
         padding: 10px;
         margin-bottom: 20px;
-        transform: translateX(-40px);
-        width: calc(100% + 40px);
+        transform: translateX(15px);
+        width: calc(100% + 25px);
     }
 
     .weather-icon-box {
