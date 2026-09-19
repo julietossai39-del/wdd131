@@ -32,6 +32,17 @@ header {
     padding: 20px;
 }
 
+/* ADDITION: Added an ::after pseudo-element to build a decorative layout line below your heading text */
+.banner h1::after {
+    content: "";
+    display: block;
+    width: 65px;
+    height: 4px;
+    background-color: var(--accent);
+    margin: 8px auto 0 auto;
+    border-radius: 2px;
+}
+
 .stripe {
     background-color: var(--accent);
     height: 12px;
@@ -44,7 +55,6 @@ header {
     flex-direction: column;
 }
 
-/* Base styles for the hero container on mobile */
 .hero-section {
     width: 100%;
 }
@@ -140,7 +150,6 @@ footer p:first-of-type::before {
         min-height: 550px; 
     }
 
-    /* ADJUSTMENT 1: Make the hero section fill the container background layer */
     .hero-section {
         position: absolute;
         top: 0;
@@ -154,14 +163,12 @@ footer p:first-of-type::before {
         height: 100%;
     }
 
-    /* ADJUSTMENT 2: Force the image to cover the container area cleanly without distorting */
     .hero-img {
         width: 100%;
         height: 100%;
         object-fit: cover;
     }
 
-    /* ADJUSTMENT 3: Elevate cards with z-index to sit on top of the hero image background */
     .card {
         position: absolute;
         background-color: var(--card-bg-desktop);
