@@ -1,0 +1,173 @@
+:root {}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    width: 100%;
+    text-align: center;
+}
+
+.banner {
+    background-color: #7e65cc;
+    color: white;
+    padding: 20px;
+}
+
+.stripe {
+    background-color: #A397C7;
+    height: 12px;
+    width: 100%;
+}
+
+.main-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-section {
+    width: 100%;
+}
+
+.hero-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.card {
+    padding: 25px;
+    background-color: #FFFFFF;
+    text-align: center;
+}
+
+.data-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    max-width: 290px;
+    margin: 0 auto;
+}
+
+.data-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.95rem;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.05);
+    padding-bottom: 5px;
+}
+
+.label {
+    font-weight: 700;
+    text-align: left;
+}
+
+.value {
+    font-weight: 400;
+    text-align: right;
+    color: #333333;
+}
+
+.weather-icon-box {
+    display: flex;
+    justify-content: center;
+    margin: 15px 0;
+}
+
+.weather-svg {
+    width: 65px;
+    height: 65px;
+    display: block;
+}
+
+footer {
+    background-color:  #7e65cc;
+    color: #FFFFFF;
+    padding: 20px;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .main-container {
+        position: relative;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .card {
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.85);
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        text-align: left;
+        width: 320px;
+    }
+
+    .data-card {
+        top: 40px;
+        left: 40px;
+    }
+
+    .weather-card {
+        bottom: 40px;
+        right: 40px;
+    }
+
+    .data-card h2 {
+        display: block;
+        background-color: #7e65cc;
+        color: #FFFFFF;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 10px;
+        margin-bottom: 20px;
+        transform: translateX(-40px);
+        width: calc(100% + 40px);
+    }
+
+    .weather-card h2 {
+        display: block;
+        position: relative;
+        background-color: #7e65cc;
+        color: #FFFFFF;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 10px;
+        margin-bottom: 20px;
+        transform: translateX(-40px);
+        width: calc(100% + 40px);
+    }
+
+    .weather-icon-box {
+        position: absolute;
+        top: 20px;
+        right: 40px;
+        z-index: 10;
+    }
+
+    .weather-svg {
+        width: 35px;
+        height: 35px;
+    }
+
+    footer {
+        font-size: 20px;
+    }
+}

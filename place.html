@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Destiny O. Ossai">
+    <meta name="description" content="This is a country page for WDD 131-Dynamic Web Fundamentals.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <title>Country page</title>
+    <link rel="stylesheet" href="styles/place.css">
+    <script src="scripts/place.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="banner">
+            <h1>Cross River</h1>
+        </div>
+        <div class="stripe"></div>
+    </header>
+    <main>
+        <div class="main-container">
+            <div class="hero-section">
+                <img src="images/crossriver.webp" alt="Beautiful landscape view of Cross River State" class="hero-img">
+            </div>
+            <section class="card data-card">
+                <h2>Data</h2>
+                <div class="data-group">
+                    <div class="data-row"><span class="label">Area:</span> <span class="value">20,156 sq km</span></div>
+                    <div class="data-row"><span class="label">Population:</span> <span class="value">Over 3.8
+                            million</span>
+                    </div>
+                    <div class="data-row"><span class="label">Capital:</span> <span class="value">Calabar</span></div>
+                    <div class="data-row"><span class="label">Languages:</span> <span class="value">Efik, Bekwarra,
+                            English</span></div>
+                    <div class="data-row"><span class="label">Currency:</span> <span class="value">Nigerian Naira
+                            (₦)</span>
+                    </div>
+                    <div class="data-row"><span class="label">Time Zone:</span> <span class="value">UTC+1</span></div>
+                    <div class="data-row"><span class="label">Calling Code:</span> <span class="value">+234</span></div>
+                    <div class="data-row"><span class="label">Internet TLD:</span> <span class="value">.ng</span></div>
+                </div>
+            </section>
+            <section class="card weather-card">
+                <h2>Weather</h2>
+                <div class="weather-icon-box">
+                    <img src="images/thunderstorm_100dp_000000_FILL0_wght400_GRAD0_opsz48.svg"
+                        alt="Thunderstorm Overcast Cloud Indicator" class="weather-svg">
+                </div>
+                <div class="data-group">
+                    <div class="data-row"><span class="label">Temperature:</span> <span class="value" id="temp"> 27 °C</span></div>
+                    <div class="data-row"><span class="label">Conditions:</span> <span
+                            class="value">Thunderstorms</span>
+                    </div>
+                    <div class="data-row"><span class="label">Wind:</span> <span class="value" id="wind">8km/h</span></div>
+                    <div class="data-row"><span class="label">Wind Chill:</span> <span class="value"
+                            id="chill"></span>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; <span id="currentyear"></span> 🌹 Destiny Ossai 🌹 Crossriver</p>
+        <p>Last modified: <span id="lastModified"></span></p>
+    </footer>
+</body>
+
+</html>
