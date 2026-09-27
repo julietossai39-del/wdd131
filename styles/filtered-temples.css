@@ -4,7 +4,6 @@
     --text-color: #2d3142;
     --light-bg: #f8f9fa;
     --white: #ffffff;
-    --heading-font: 'Playfair Display', serif;
     --body-font: 'Roboto', sans-serif;
 }
 
@@ -22,7 +21,7 @@ header {
     padding: 20px;
     border: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
-    position: relative; /* Context anchor for absolute menu alignment */
+    position: relative;
 }
 
 header,
@@ -31,20 +30,19 @@ main {
 }
 
 h1 {
-    font-family: var(--heading-font);
+    font-family: var(--body-font);
     font-size: 2rem;
     color: var(--light-bg);
     margin: 0;
 }
 
 h2 {
-    font-family: var(--heading-font);
+    font-family: var(--body-font);
     font-size: 1.5rem;
     color: var(--primary-color);
     text-align: center;
 }   
 
-/* --- 📱 Mobile Navigation (Mobile First Default) --- */
 nav ul {
     list-style: none;
     display: flex;
@@ -54,11 +52,11 @@ nav ul {
 }
 
 nav ul.navigation li {
-    display: none; /* Hidden by default on small viewports */
+    display: none;
 }
 
 nav ul.navigation.open li {
-    display: block; /* Revealed when menu button is clicked */
+    display: block;
 }
 
 nav a {
@@ -82,7 +80,6 @@ img {
     display: block;
 }
 
-/* Hamburger Trigger Button Configuration */
 #menu {
     font-size: 1.5rem;
     border: 0;
@@ -97,14 +94,14 @@ img {
 #menu::before { content: "☰"; }
 #menu.open::before { content: "❌"; } 
 
-/* --- 📦 Card Layout (Mobile First Default) --- */
 .grid-container {
     display: grid;
-    grid-template-columns: 1fr; /* Stacks 1 single vertical column on mobile */
+    grid-template-columns: 1fr;
     gap: 1.5rem;
     margin: 2rem auto;
-    max-width: 450px; /* Limits width on mobile so text fields do not overstretch */
+    max-width: 450px;
     padding: 0 1rem;
+    min-height: 50vh;
 }
 
 figure {
@@ -133,7 +130,7 @@ figcaption {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     border: 1px solid #e0e0e0;
     content-visibility: auto;
-    contain-intrinsic-size: 0 400px; 
+    contain-intrinsic-size: auto 400px; 
 }
 
 .grid-container section:hover {
@@ -157,7 +154,7 @@ figcaption {
     font-size: 0.95rem;
     color: #4a5568;
     line-height: 1.4;
-    text-align: center; /* Aligns data column fields evenly along the left edge */
+    text-align: center;
 }
 
 .grid-container section .label {
@@ -183,40 +180,34 @@ footer {
     margin-top: 2rem;
 }
 
-/* --- 🖥️ Large Screen Layout Upgrades (Desktop Viewports) --- */
 @media (min-width: 768px) {
-    /* Hides the hamburger trigger button on desktops */
     #menu {
         display: none;
     }
 
-    /* Arranges the header layout horizontally across the screen banner */
     header {
         grid-template-columns: auto 1fr;
         align-items: center;
         max-width: 1200px;
     }
 
-    /* Snaps navigation menu options horizontally into line */
     nav ul {
         flex-direction: row;
         justify-content: flex-end;
     }
 
     nav ul.navigation li {
-        display: block; /* Ensures links stay visible on larger screens */
+        display: block;
     }
 
-    
     .grid-container {
         display: grid;
-        /* auto-fill keeps the grid cells fixed to their proper width instead of stretching a single card across the entire monitor screen */
         grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        justify-content: center;
         gap: 25px;
         padding: 20px;
         max-width: 1200px;
         margin: 0 auto;
+        min-height: 75vh;
     }
-
-    
 }
