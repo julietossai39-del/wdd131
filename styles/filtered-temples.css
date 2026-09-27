@@ -1,0 +1,216 @@
+:root {
+    --primary-color: #1b4332;
+    --accent-color: #52b788;
+    --text-color: #2d3142;
+    --light-bg: #f8f9fa;
+    --white: #ffffff;
+    --heading-font: 'Playfair Display', serif;
+    --body-font: 'Roboto', sans-serif;
+}
+
+body {
+    margin: 0;
+    font-family: var(--body-font);
+    color: var(--text-color);
+    background-color: var(--light-bg);
+}
+
+header {
+    background-color: var(--primary-color);
+    display: grid;
+    grid-gap: 1rem;
+    padding: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    position: relative; /* Context anchor for absolute menu alignment */
+}
+
+header,
+main {
+    margin: 0 auto;
+}
+
+h1 {
+    font-family: var(--heading-font);
+    font-size: 2rem;
+    color: var(--light-bg);
+    margin: 0;
+}
+
+h2 {
+    font-family: var(--heading-font);
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    text-align: center;
+}   
+
+/* --- 📱 Mobile Navigation (Mobile First Default) --- */
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul.navigation li {
+    display: none; /* Hidden by default on small viewports */
+}
+
+nav ul.navigation.open li {
+    display: block; /* Revealed when menu button is clicked */
+}
+
+nav a {
+    display: block;
+    color: var(--white);
+    text-align: center;
+    padding: 1rem;
+    text-decoration: none;
+    font-size: larger;
+}
+
+nav a:hover {
+    text-decoration: underline double;
+    background-color: #eee;
+    color: #000;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Hamburger Trigger Button Configuration */
+#menu {
+    font-size: 1.5rem;
+    border: 0;
+    background: none;
+    color: var(--white);
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    cursor: pointer;
+} 
+
+#menu::before { content: "☰"; }
+#menu.open::before { content: "❌"; } 
+
+/* --- 📦 Card Layout (Mobile First Default) --- */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Stacks 1 single vertical column on mobile */
+    gap: 1.5rem;
+    margin: 2rem auto;
+    max-width: 450px; /* Limits width on mobile so text fields do not overstretch */
+    padding: 0 1rem;
+}
+
+figure {
+    background-color: var(--white);
+    margin: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+figcaption {
+    padding: 1rem;
+    font-size: 0.95rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.grid-container section {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid #e0e0e0;
+    content-visibility: auto;
+    contain-intrinsic-size: 0 400px; 
+}
+
+.grid-container section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.grid-container section h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #1a365d;
+    font-size: 1.4rem;
+    font-family: 'Roboto', sans-serif;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 8px;
+}
+
+.grid-container section p {
+    margin: 6px 0;
+    font-size: 0.95rem;
+    color: #4a5568;
+    line-height: 1.4;
+    text-align: left; /* Aligns data column fields evenly along the left edge */
+}
+
+.grid-container section .label {
+    font-weight: 700;
+    color: #2d3748;
+}
+
+.grid-container section img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-top: 15px;
+    background-color: #f7fafc;
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: var(--light-bg);
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+/* --- 🖥️ Large Screen Layout Upgrades (Desktop Viewports) --- */
+@media (min-width: 768px) {
+    /* Hides the hamburger trigger button on desktops */
+    #menu {
+        display: none;
+    }
+
+    /* Arranges the header layout horizontally across the screen banner */
+    header {
+        grid-template-columns: auto 1fr;
+        align-items: center;
+        max-width: 1200px;
+    }
+
+    /* Snaps navigation menu options horizontally into line */
+    nav ul {
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    nav ul.navigation li {
+        display: block; /* Ensures links stay visible on larger screens */
+    }
+
+    /* ✨ ALIGNS CARDS INTO MULTIPLE VERTICAL COLUMNS SIDE-BY-SIDE */
+    .grid-container {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 25px;
+        padding: 20px;
+        max-width: 1200px; /* Expands container limit for desktop views */
+        margin: 0 auto;
+    }
+}
