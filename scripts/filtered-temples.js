@@ -90,10 +90,11 @@ const temples = [
 const gridContainer = document.querySelector(".grid-container");
 const mainHeading = document.querySelector("main h2");
 
+// ✨ OPTIMIZED CARD RENDERER ENGINE
 function createTempleCards(filteredTemples) {
     gridContainer.innerHTML = "";
 
-    filteredTemples.forEach(temple => {
+    filteredTemples.forEach((temple, index) => {
         let card = document.createElement("section");
         let name = document.createElement("h3");
         let location = document.createElement("p");
@@ -106,9 +107,20 @@ function createTempleCards(filteredTemples) {
         dedication.innerHTML = `<span class="label">Dedicated:</span> ${temple.dedicated}`;
         area.innerHTML = `<span class="label">Size:</span> ${temple.area.toLocaleString()} sq ft`;
 
+        // ✨ PERFORMANCE IMPROVEMENT: Prioritize the first visible item for layout acceleration
+        if (index === 0) {
+            img.setAttribute("loading", "eager");
+            img.setAttribute("fetchpriority", "high");
+        } else {
+            img.setAttribute("loading", "lazy");
+        }
+
         img.setAttribute("src", temple.imageUrl);
         img.setAttribute("alt", `${temple.templeName} Temple`);
-        img.setAttribute("loading", "lazy");
+        
+        // ✨ CLS DEFEATER: Mandates native layout canvas space calculation blocks instantly
+        img.setAttribute("width", "400");
+        img.setAttribute("height", "250");
 
         card.appendChild(name);
         card.appendChild(location);
