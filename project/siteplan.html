@@ -3,259 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Planning Document - Ward Executive Secretary Resource Guide</title>
-    <style>
-        /* Typography - Fonts Applied from Google Fonts Guide */
-        @import url('https://googleapis.com');
-
-        /* Color Schema Implementation Variables */
-        :root {
-            --primary-color: #002D62;       /* Deep Royal Blue: Authority, Order, Leadership */
-            --secondary-color: #D4AF37;     /* Muted Gold: Divine calling, Accents, Importance */
-            --text-dark: #2C3E50;           /* Dark Slate Blue: Soft, modern readability for paragraphs */
-            --bg-light: #F8F9FA;            /* Off-White: Clean background contrast */
-            --bg-card: #FFFFFF;             /* Pure White: Wireframe element boxes */
-            --border-color: #BDC3C7;        /* Light Gray: Wireframe structural borders */
-        }
-
-        body {
-            font-family: 'Open Sans', Arial, sans-serif;
-            line-height: 1.6;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            color: var(--text-dark);
-            background-color: var(--bg-light);
-        }
-
-        header {
-            border-bottom: 4px solid var(--primary-color);
-            padding-bottom: 15px;
-            margin-bottom: 30px;
-        }
-
-        header p {
-            margin: 5px 0 0 0;
-            font-size: 1.1em;
-        }
-
-        section {
-            background-color: var(--bg-card);
-            padding: 25px;
-            margin-bottom: 35px;
-            border-radius: 6px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            border-left: 5px solid var(--primary-color);
-        }
-
-        /* Heading Typography Styles */
-        h1, h2, h3 {
-            font-family: 'Cinzel', 'Times New Roman', serif;
-            font-weight: 700;
-            margin-top: 0;
-        }
-
-        h1 {
-            color: var(--primary-color);
-        }
-
-        h2 {
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--secondary-color);
-            padding-bottom: 8px;
-            margin-bottom: 20px;
-        }
-
-        h3 {
-            color: var(--primary-color);
-            margin-top: 20px;
-            font-size: 1.2em;
-        }
-
-        /* Color Box Previews */
-        .color-palette {
-            display: flex;
-            gap: 20px;
-            margin-top: 15px;
-            flex-wrap: wrap;
-        }
-
-        .color-box {
-            flex: 1;
-            min-width: 150px;
-            padding: 15px;
-            border-radius: 4px;
-            text-align: center;
-            color: white;
-            font-weight: bold;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-        }
-
-        .box-primary { background-color: var(--primary-color); }
-        .box-secondary { background-color: var(--secondary-color); color: #111; }
-        .box-text { background-color: var(--text-dark); }
-        .box-bg { background-color: #E9ECEF; color: #111; border: 1px solid var(--border-color); }
-
-        ul {
-            padding-left: 20px;
-        }
-
-        li {
-            margin-bottom: 10px;
-        }
-
-        strong {
-            color: var(--primary-color);
-        }
-
-        /* --- WIREFRAME LAYOUT STYLES --- */
-        .wireframe-container {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-            margin-top: 20px;
-        }
-
-        /* Monochromatic Wireframe Elements simulating software structures */
-        .wf-window {
-            background-color: #FFF;
-            border: 2px solid var(--border-color);
-            border-radius: 4px;
-            padding: 15px;
-            font-family: monospace;
-            color: #555;
-        }
-
-        .wf-label {
-            font-weight: bold;
-            text-transform: uppercase;
-            font-size: 0.85em;
-            background-color: #EAEAEA;
-            padding: 4px 8px;
-            display: inline-block;
-            margin-bottom: 15px;
-            border: 1px solid var(--border-color);
-        }
-
-        .wf-header {
-            border: 2px dashed #999;
-            padding: 15px;
-            text-align: center;
-            margin-bottom: 15px;
-            background-color: #FAFAFA;
-        }
-
-        .wf-nav {
-            border: 2px dashed #999;
-            padding: 10px;
-            text-align: center;
-            margin-bottom: 15px;
-            background-color: #F0F0F0;
-        }
-
-        .wf-hero {
-            border: 2px dashed #999;
-            padding: 30px 15px;
-            text-align: center;
-            margin-bottom: 15px;
-            background-color: #EAEAEA;
-        }
-
-        .wf-main-content {
-            border: 2px dashed #999;
-            padding: 20px;
-            background-color: #FAFAFA;
-            margin-bottom: 15px;
-        }
-
-        .wf-block {
-            border: 1px dashed #AAA;
-            padding: 15px;
-            margin-bottom: 10px;
-            background-color: #FFF;
-            text-align: center;
-        }
-
-        .wf-footer {
-            border: 2px dashed #999;
-            padding: 10px;
-            text-align: center;
-            background-color: #F0F0F0;
-        }
-
-        /* Desktop Wireframe Specific Layout Blocks */
-        .desktop-layout {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
-
-        /* Desktop Simulation Adjustments */
-        @media (min-width: 768px) {
-            .wf-desktop-grid {
-                display: grid;
-                grid-template-columns: 200px 1fr;
-                gap: 15px;
-            }
-            .wf-desktop-grid .wf-nav {
-                margin-bottom: 0;
-                height: auto;
-            }
-        }
-
-        footer.site-footer {
-            margin-top: 50px;
-            border-top: 2px solid var(--primary-color);
-            padding-top: 15px;
-            font-size: 0.9em;
-            color: #666;
-            text-align: center;
-        }
-    </style>
+    <meta name="description" content="Website plan for Ward Secretary Desk, a practical digital resource guide for ward executive secretaries.">
+    <meta name="author" content="Destiny O. Ossai">
+    <title>Website Plan | Ward Secretary Desk</title>
+    <link rel="stylesheet" href="styles/siteplan.css">
 </head>
 <body>
-
-    <header>
-        <h1>Website Planning Document</h1>
-        <p><strong>Course:</strong> WDD 131 | <strong>Project:</strong> Ward Executive Secretary Resource Guide</p>
+    <header class="page-header">
+        <a class="brand" href="#site-name" aria-label="Ward Secretary Desk website plan">
+            <span class="brand-mark" aria-hidden="true">WS</span>
+            <span>Ward Secretary Desk</span>
+        </a>
+        <p class="course-label">WDD 131 · Website Planning Document</p>
     </header>
 
     <main>
-        <!-- Site Name Section -->
-        <section id="site-name">
-            <h2>Site Name</h2>
-            <p><strong>Proposed Name:</strong> LDS Ward Executive Secretary Digital Resource Guide</p>
-            <p><strong>Reason for Choice:</strong> I currently serve as a Ward Executive Secretary within the Benin City Nigeria Uzebu Stake. Because I perform these administrative tasks every week, I chose this name to establish a clear, practical handbook. It leverages my direct, personal experience and organizational skills to build a dedicated platform that helps me and other church secretaries manage our callings smoothly and effectively.</p>
+        <section class="intro" aria-labelledby="page-title">
+            <p class="eyebrow">Project plan</p>
+            <h1 id="page-title">A practical guide for a meaningful calling</h1>
+            <p>This plan outlines a digital handbook to help ward executive secretaries stay prepared, organized, and supportive of their bishopric.</p>
         </section>
 
-        <!-- Site Purpose Section -->
-        <section id="site-purpose">
-            <h2>Site Purpose</h2>
-            <p>The purpose of this website is to provide an informational, digital handbook designed to streamline the administrative duties of Ward Executive Secretaries in The Church of Jesus Christ of Latter-day Saints, with a tailored focus on local units like the Uzebu Stake. The site will function as a central hub featuring step-by-step checklists for Sunday block meetings, Bishopric appointment scheduling workflows, Ward Council agenda templates, and optimization tips for managing digital ward calendars.</p>
+        <section id="site-name" aria-labelledby="site-name-heading">
+            <h2 id="site-name-heading">Site Name</h2>
+            <div class="name-card">
+                <span class="brand-mark large" aria-hidden="true">WS</span>
+                <div>
+                    <h3>Ward Secretary Desk</h3>
+                    <p class="domain">Proposed domain: <code>wardsecretarydesk.org</code> (availability not checked)</p>
+                </div>
+            </div>
+            <p>I chose this name because it is short, easy to remember, and clearly describes a helpful workspace for ward executive secretaries. It reflects my weekly service in a ward in the Benin City Nigeria Uzebu Stake and the practical experience I hope to share. This is an independent resource, not an official Church website.</p>
         </section>
 
-        <!-- Scenarios Section -->
-        <section id="scenarios">
-            <h2>Target Audience Scenarios</h2>
-            <p>A newly called or existing Ward Executive Secretary visiting the site might ask the following questions to help manage their calling:</p>
+        <section id="site-purpose" aria-labelledby="purpose-heading">
+            <h2 id="purpose-heading">Site Purpose</h2>
+            <p>Ward Secretary Desk will be an informational handbook for Ward Executive Secretaries of The Church of Jesus Christ of Latter-day Saints, with examples informed by local units such as those in the Benin City Nigeria Uzebu Stake. It will provide step-by-step Sunday meeting checklists, a guide to coordinating the Bishop’s appointments, reusable Ward Council agenda templates, and practical tips for keeping ward calendars organized with digital tools. The goal is to help new and experienced secretaries serve smoothly and reliably.</p>
+        </section>
+
+        <section id="scenarios" aria-labelledby="scenarios-heading">
+            <h2 id="scenarios-heading">Audience Scenarios</h2>
+            <p>These questions represent needs a ward executive secretary may bring to the site:</p>
             <ul>
-                <li><strong>Scenario 1:</strong> What specific tasks do I need to complete before, during, and right after Sunday block meetings to keep things running efficiently?</li>
-                <li><strong>Scenario 2:</strong> Where can I find a structured template or checklist to help the Bishop coordinate and track his weekly interview schedule and Ward Council agendas?</li>
+                <li>What should I prepare before, manage during, and follow up after the Sunday block meetings?</li>
+                <li>How can I organize the Bishop’s interview appointments and communicate schedule changes clearly?</li>
+                <li>Is there a simple Ward Council agenda template I can adapt for our next meeting?</li>
+                <li>What is a reliable way to keep the ward calendar up to date and prevent scheduling conflicts?</li>
             </ul>
         </section>
 
-        <!-- Color Schema Section -->
-        <section id="color-schema">
-            <h2>Color Schema</h2>
-            <p>The selected color schema establishes an orderly, clean, and reverent atmosphere fitting an administrative Church resource guide:</p>
-            <ul>
-                <li><strong>Primary Color (Deep Royal Blue - #002D62):</strong> Used for the main page header accents, section borders, and primary headings (H1, H2, H3) to communicate structure, organization, and official administrative leadership.</li>
-                <li><strong>Secondary Color (Muted Gold - #D4AF37):</strong> Used for decorative borders underneath headings and accent highlights to denote calling importance and divine stewardship.</li>
-                <li><strong>Text Dark Color (Dark Slate Blue - #2C3E50):</strong> Applied to all body paragraphs and list components to ensure high legibility while remaining softer and more modern than harsh solid black text.</li>
-                <li><strong>Background Light (Off-White - #F8F9FA):</strong> Sets a crisp, light, distraction-free backdrop for the entire content wrapper.</li>
+        <section id="color-schema" aria-labelledby="colors-heading">
+            <h2 id="colors-heading">Color Schema</h2>
+            <p>The palette uses calm, professional colors to make an administrative resource feel clear, welcoming, and easy to scan. These colors are also applied throughout this planning document.</p>
+            <ul class="color-list">
+                <li><span class="swatch navy" aria-hidden="true"></span><span><strong>Deep navy — #123B5D:</strong> Page headings, navigation, logo mark, and primary accents.</span></li>
+                <li><span class="swatch gold" aria-hidden="true"></span><span><strong>Warm gold — #D6A84F:</strong> Decorative rules, small highlights, and emphasis accents.</span></li>
+                <li><span class="swatch paper" aria-hidden="true"></span><span><strong>Warm paper — #F5F3EC:</strong> Page background to create a soft, comfortable reading surface.</span></li>
+                <li><span class="swatch ink" aria-hidden="true"></span><span><strong>Charcoal — #24313A:</strong> Paragraph and list text for strong readability.</span></li>
             </ul>
-            <div class="color-palette">
-                <div class="color-box box-primary">Primary Blue<br>#002D62</div>
-                <div class="color-box box-secondary">Secondary Gold<br>#D4AF37</div>
-                <div class="color-box box-text">Text Dark<br>#2C3E50</div>
-                <div class="color-box box-bg">Background Light<br>#F8F9FA</div>
+        </section>
+
+        <section id="typography" aria-labelledby="type-heading">
+            <h2 id="type-heading">Typography</h2>
+            <ul>
+                <li><strong>Georgia:</strong> Used for the page title, section headings, and site name to add a warm, established character.</li>
+                <li><strong>Arial:</strong> Used for body text, navigation, labels, and controls for clear reading across common devices.</li>
+            </ul>
+            <p class="type-sample"><span class="serif-sample">A clear plan. A prepared Sunday.</span><br><span class="sans-sample">Checklists and templates that make the details easier to manage.</span></p>
+        </section>
+
+        <section id="wireframes" aria-labelledby="wireframes-heading">
+            <h2 id="wireframes-heading">Home Page Wireframes</h2>
+            <p>The home page will introduce the resource guide and direct visitors to its practical tools. The diagrams show the planned content order and layout, not final visual styling.</p>
+            <div class="wireframe-grid">
+                <article class="wireframe-card" aria-labelledby="mobile-heading">
+                    <h3 id="mobile-heading">Mobile View</h3>
+                    <div class="wireframe mobile-wireframe" role="img" aria-label="Mobile wireframe: logo and menu, welcome introduction, quick links, resource cards, and footer stacked vertically.">
+                        <div class="wf-block wf-brand">Logo / Site Name <span>Menu ☰</span></div>
+                        <div class="wf-block wf-hero">Welcome message<br><small>Brief introduction and guide button</small></div>
+                        <div class="wf-block wf-links">Quick links<br><small>Sunday · Appointments · Council · Calendar</small></div>
+                        <div class="wf-block">Sunday checklist</div>
+                        <div class="wf-block">Appointment guide</div>
+                        <div class="wf-block">Ward Council template</div>
+                        <div class="wf-block">Calendar tips</div>
+                        <div class="wf-block wf-footer">Footer / References</div>
+                    </div>
+                </article>
+
+                <article class="wireframe-card" aria-labelledby="desktop-heading">
+                    <h3 id="desktop-heading">Desktop / Wide View</h3>
+                    <div class="wireframe desktop-wireframe" role="img" aria-label="Desktop wireframe: logo at the left of a horizontal header, navigation on the right, a full-width welcome section, four resource cards in a two-column grid, and a footer.">
+                        <div class="wf-block wf-brand">Logo / Site Name <span>Home &nbsp; Checklists &nbsp; Templates &nbsp; Calendar</span></div>
+                        <div class="wf-block wf-hero">Welcome message and guide button</div>
+                        <div class="wf-resource-grid">
+                            <div class="wf-block">Sunday checklist</div>
+                            <div class="wf-block">Appointment guide</div>
+                            <div class="wf-block">Ward Council template</div>
+                            <div class="wf-block">Calendar tips</div>
+                        </div>
+                        <div class="wf-block wf-footer">Footer / References</div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="page-footer">
+        <p>Ward Secretary Desk · WDD 131 project plan</p>
+    </footer>
+</body>
+</html>
