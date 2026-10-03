@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="author" content="Destiny O. Ossai">
+   <meta name="description" content="Thank you for submitting a product review.">
+
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;500;600;700&display=swap"
+      rel="stylesheet">
+
+   <title>Review Submitted</title>
+   <link rel="stylesheet" href="styles/form.css">
+   <script src="scripts/products.js" defer></script>
+   <script src="scripts/footer.js" defer></script>
+   <script src="scripts/review.js" defer></script>
+</head>
+
+<body>
+   <header>
+      <h1>Thank You!</h1>
+   </header>
+   <main>
+      <section class="review-result" aria-labelledby="review-heading">
+         <h2 id="review-heading">Your review was submitted</h2>
+         <p class="review-count">Reviews completed: <strong id="reviewCount">0</strong></p>
+         <dl>
+            <div><dt>Product</dt><dd id="productName"></dd></div>
+            <div><dt>Your rating</dt><dd id="rating"></dd></div>
+            <div><dt>Installation date</dt><dd id="installationDate"></dd></div>
+            <div><dt>Useful features</dt><dd id="featureList"></dd></div>
+            <div><dt>Your review</dt><dd id="comments"></dd></div>
+            <div><dt>Name</dt><dd id="recommend"></dd></div>
+         </dl>
+         <a class="back-link" href="form.html">Submit another review</a>
+      </section>
+   </main>
+
+   <footer>
+      <p class="footer-owner">&copy; <span id="currentyear"></span> Destiny O. Ossai <span aria-hidden="true">🌺</span> Nigeria</p>
+      <p class="footer-meta">Last modified: <time id="lastModified"></time></p>
+   </footer>
+</body>
+
+</html>

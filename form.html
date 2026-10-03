@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="author" content="Destiny O. Ossai">
+   <meta name="description" content="This is the product review form page for WDD 131-Dynamic Web Fundamentals.">
+
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;500;600;700&display=swap"
+      rel="stylesheet">
+
+   <title>Product Review Form</title>
+   <link rel="stylesheet" href="styles/form.css">
+   <script src="scripts/products.js" defer></script>
+   <script src="scripts/footer.js" defer></script>
+   <script src="scripts/form.js" defer></script>
+</head>
+
+<body>
+   <header>
+      <h1>Product Review</h1>
+   </header>
+   <main>
+      <form action="review.html" method="get" class="wf1">
+         <label for="productName">Choose a product
+            <select id="productName" name="productName" required>
+               <option value="">--Select a product--</option>
+            </select></label>
+
+         <fieldset class="rating">
+            <legend>Overall Rating</legend>
+            <div class="stars">
+               <input type="radio" id="fivestar" name="stars" value="5" required><label for="fivestar"></label>
+               <input type="radio" id="fourstar" name="stars" value="4" required><label for="fourstar"></label>
+               <input type="radio" id="threestar" name="stars" value="3" required><label for="threestar"></label>
+               <input type="radio" id="twostar" name="stars" value="2" required><label for="twostar"></label>
+               <input type="radio" id="onestar" name="stars" value="1" required><label for="onestar"></label>
+            </div>
+         </fieldset>
+
+         <label for="installationDate">Date of Installation</label>
+         <input type="date" id="installationDate" name="installationDate" required>
+
+         <label for="features">Which features did you find useful? (Select all that apply)</label>
+         <label><input type="checkbox" id="feature1" name="features" value="Feature 1">Durability</label>
+         <label><input type="checkbox" id="feature2" name="features" value="Feature 2">Ease of Use</label>
+         <label><input type="checkbox" id="feature3" name="features" value="Feature 3">Performance</label>
+         <label for="feature4"><input type="checkbox" id="feature4" name="features" value="Feature 4">Design</label>
+
+         <label for="comments">Written Review (optional)</label>
+         <textarea id="comments" name="comments" rows="4" cols="50"></textarea>
+
+         <label for="recommend">Your Name (optional)</label>
+         <input type="text" id="recommend" name="recommend">
+
+         <button type="submit">Post Review</button>
+      </form>
+   </main>
+
+   <footer>
+      <p class="footer-owner">&copy; <span id="currentyear"></span> Destiny O. Ossai <span aria-hidden="true">🌺</span> Nigeria</p>
+      <p class="footer-meta">Last modified: <time id="lastModified"></time></p>
+   </footer>
+</body>
+
+</html>

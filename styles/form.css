@@ -1,0 +1,259 @@
+:root {
+    --color-primary: #d94862;
+    --color-secondary: #4ecdc4;
+    --color-accent: #ffd166;
+    --color-highlight: #70c1b3;
+    --color-background: #fff9e6;
+    --color-panel: #fff0cc;
+    --color-deep: #197278;
+    --color-text: #263238;
+    --color-border: #c9bd9d;
+    --font-body: "Nunito", sans-serif;
+    --font-heading: "Fredoka", sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 430px;
+    margin: 0 auto;
+    padding: 12px;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+}
+
+header,
+footer {
+    color: var(--color-background);
+    background-color: var(--color-deep);
+    text-align: center;
+}
+
+header {
+    margin-bottom: 12px;
+    padding: 12px;
+    border-radius: 4px;
+}
+
+h1 {
+    margin: 0;
+    color: inherit;
+    font-family: var(--font-heading);
+    font-size: 1.55rem;
+}
+
+main {
+    margin-bottom: 12px;
+}
+
+.wf1 {
+    padding: 16px;
+    border-radius: 5px;
+    background-color: var(--color-panel);
+}
+
+.wf1 > label,
+.rating legend {
+    display: block;
+    margin: 0 0 3px;
+    font-weight: 600;
+}
+
+.wf1 select {
+    margin-top: 4px;
+}
+
+.wf1 select,
+.wf1 input[type="date"],
+.wf1 input[type="text"],
+.wf1 textarea {
+    display: block;
+    width: 100%;
+    min-height: 40px;
+    margin-bottom: 16px;
+    padding: 9px;
+    border: 1px solid var(--color-border);
+    border-radius: 3px;
+    background-color: #fff;
+    color: var(--color-text);
+    font: inherit;
+}
+
+.wf1 textarea {
+    min-height: 84px;
+    resize: vertical;
+}
+
+.rating {
+    min-width: 0;
+    margin: 0 0 14px;
+    padding: 0;
+    border: 0;
+}
+
+.rating legend {
+    padding: 0;
+}
+
+/* stars */
+input[type="radio"] {
+	display: none;
+	position: relative;
+	caret-color: rgba(0, 0, 0, 0);
+}
+
+.stars {
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: left;
+}
+
+.stars > label {
+	color: gold;
+	width: 30px;
+	height: 30px;
+	font-size: 2rem;
+	margin-left: 5px;
+	display: flex;
+	align-items: center;
+	caret-color: rgba(0, 0, 0, 0); /* remove blinking cursor*/
+}
+
+.stars > label:hover {
+	color: #000;
+}
+
+.stars > label::before {
+	content: "\2606";
+}
+
+.stars input:checked ~ label::before {
+	content: "\2605";
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    clip-path: inset(50%);
+}
+
+.wf1 > label:has(input[type="checkbox"]) {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 6px;
+    font-weight: 400;
+}
+
+.wf1 input[type="checkbox"] {
+    width: 19px;
+    height: 19px;
+    margin: 0;
+    accent-color: var(--color-highlight);
+}
+
+.wf1 button {
+    width: 100%;
+    min-height: 42px;
+    margin-top: 2px;
+    border: 0;
+    border-radius: 3px;
+    background-color: var(--color-text);
+    color: #fff;
+    font: 600 1rem var(--font-body);
+    cursor: pointer;
+}
+
+.wf1 button:hover {
+    background-color: var(--color-primary);
+}
+
+footer {
+    padding: 10px 12px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+footer p {
+    margin: 3px 0;
+}
+
+.footer-owner {
+    font-weight: 700;
+}
+
+.footer-meta {
+    margin-top: 8px;
+    padding-top: 7px;
+    border-top: 1px solid rgb(255 249 230 / 35%);
+    font-size: 0.75rem;
+}
+
+.review-result {
+    padding: 16px;
+    border-radius: 5px;
+    background-color: var(--color-panel);
+}
+
+.review-result h2 {
+    margin: 0 0 12px;
+    color: var(--color-deep);
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+}
+
+.review-count {
+    padding: 9px 12px;
+    border-radius: 4px;
+    background-color: var(--color-highlight);
+}
+
+.review-result dl {
+    margin: 16px 0;
+}
+
+.review-result dl > div {
+    padding: 9px 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.review-result dt {
+    font-weight: 700;
+}
+
+.review-result dd {
+    margin: 3px 0 0;
+    overflow-wrap: anywhere;
+}
+
+.back-link {
+    display: inline-block;
+    padding: 9px 12px;
+    border-radius: 3px;
+    background-color: var(--color-primary);
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    background-color: var(--color-deep);
+}
+
+.review-invalid .back-link {
+    margin-top: 8px;
+}
+
+@media (min-width: 600px) {
+    body {
+        padding-top: 24px;
+    }
+}
