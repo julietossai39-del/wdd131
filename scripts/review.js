@@ -1,3 +1,8 @@
+window.addEventListener('DOMContentLoaded', () => {
+    document.getElementById("currentyear").textContent = new Date().getFullYear();
+    document.getElementById("lastModified").textContent = document.lastModified;
+});
+
 document.addEventListener("DOMContentLoaded", () => {
     const parameters = new URLSearchParams(window.location.search);
     const product = reviewProducts.find((item) => item.id === parameters.get("productName"));
