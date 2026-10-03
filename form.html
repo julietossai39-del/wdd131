@@ -28,7 +28,7 @@
       <form action="review.html" method="get" class="wf1">
          <label for="productName">Choose a product
             <select id="productName" name="productName" required>
-               <option value="">--Select a product--</option>
+               <option value="" disabled selected>--Select a product--</option>
             </select></label>
 
          <fieldset class="rating">
@@ -45,10 +45,10 @@
          <label for="installationDate">Date of Installation</label>
          <input type="date" id="installationDate" name="installationDate" required>
 
-         <label for="features">Which features did you find useful? (Select all that apply)</label>
-         <label><input type="checkbox" id="feature1" name="features" value="Feature 1">Durability</label>
-         <label><input type="checkbox" id="feature2" name="features" value="Feature 2">Ease of Use</label>
-         <label><input type="checkbox" id="feature3" name="features" value="Feature 3">Performance</label>
+         <p class="field-label">Which features did you find useful? (Select all that apply)</p>
+         <label for="feature1"><input type="checkbox" id="feature1" name="features" value="Feature 1">Durability</label>
+         <label for="feature2"><input type="checkbox" id="feature2" name="features" value="Feature 2">Ease of Use</label>
+         <label for="feature3"><input type="checkbox" id="feature3" name="features" value="Feature 3">Performance</label>
          <label for="feature4"><input type="checkbox" id="feature4" name="features" value="Feature 4">Design</label>
 
          <label for="comments">Written Review (optional)</label>

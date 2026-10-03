@@ -57,6 +57,7 @@ main {
 }
 
 .wf1 > label,
+.wf1 > .field-label,
 .rating legend {
     display: block;
     margin: 0 0 3px;
